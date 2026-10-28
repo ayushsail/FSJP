@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Student {
+class Stud {
     String name;
     int rollNumber;
     float marks;
@@ -30,8 +30,8 @@ class Student {
 
 public class A1_ObjectAndClasses {
     public static void main(String[] args) {
-        Student s1 = new Student();
-        Student s2 = new Student();
+        Stud s1 = new Stud();
+        Stud s2 = new Stud();
 
         System.out.println("Enter details of Student 1:");
         s1.inputDetails();
