@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration From</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dddcdc;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid grey;
+            border-radius: 30px;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Registration Form</h1>
+        <p>Enter your details below.</p>
+
+        <form action="#" method="post">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="roll">Roll Number</label>
+                    <input type="text" id="roll" name="roll" placeholder="Enter your roll number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dept">Department</label>
+                    <select name="dept" id="dept" required>
+                        <option value="">Select Department</option>
+                        <option value="aids">AI & DS</option>
+                        <option value="comps">Computer Science</option>
+                        <option value="mech">Mechanical</option>
+                        <option value="Elct">Electronics</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <h5>Gender : </h5>
+                    <label>
+                        <input type="radio" name="gender" value="male" required>Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female" required>Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="not-specified" required>Not-specified
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="add">Address</label>
+                    <textarea name="add" id="add" rows="3" placeholder="Enter your address" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Register Student</button>
+                    <button type="reset">Clear Form</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
