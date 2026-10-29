@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form onsubmit="return validateForm()">
+
+        <label for="name">Name :</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="email">Email :</label>
+        <input type="text" id="email" name="email" required>
+        <br><br>
+
+        <label for="password">Password :</label>
+        <input type="text" id="password" name="password" required>
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+
+        function validateForm () {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+
+            let namePattern = /^[A-Za-z ]+$/;
+            let emailPatter = /^[^\s@]+@[^\s@]+\.(com|in|org|edu.in)$/;
+
+            if (name === "" | !namePattern.test(name)) { alert("Please enter valid name!"); return false; }
+            if (!emailPatter.test(email)) { alert("Please enter a valid email!"); return false; }
+            if (password.lenght < 6) { alert("Password must contain atleast 6 charachters!"); return false; }
+
+            alert("Registeration form validated Successfully.")
+            return true;
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
