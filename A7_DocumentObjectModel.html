@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color changer</title>
+</head>
+<body>
+    <h1>DOM Background color changer</h1>
+    <p>Background color change every 5 seconds.</p>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+        let colors = ["lightblue", "lightgreen", "lightyellow", "lightpink"];
+        let i = 0;
+
+        function colorChange () {
+            document.body.style.backgroundColor = colors[i]
+            i = (i + 1) % colors.length;
+        }
+
+        colorChange();
+        setInterval(colorChange, 5000);
+    </script>
+    
+</body>
+</html>
