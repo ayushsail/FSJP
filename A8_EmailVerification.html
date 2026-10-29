@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <style>
+        body {
+            background-color: #c7c7c7;
+            font-family: Helvetica, sans-serif;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid grey;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form action="#" onsubmit="return validateEmail()">
+            <label for="email">Enter Email :</label>
+            <input type="text" id="email" name="email" required>
+            <button type="submit">Validate</button>
+        </form>
+
+    </div>
+
+    <script>
+
+        // function validateEmail () {
+        //     let email = document.getElementById("email").value.trim();
+        //     let atPos = email.indexOf("@");
+        //     let dotPos = email.indexOf(".");
+
+        //     if (email === "") { alert("Email cannot be empty !"); return false; }
+
+        //     if (atPos <= 0 || dotPos < atPos + 2 || dotPos === email.lenght - 1) {
+        //         alert("Invalid Email !! please enter a valid email.");
+        //         return flase;
+        //     }
+
+        //     alert("Valide email address : " +email);
+        //     return true; 
+        // }
+
+        
+        // BY USING REGEX
+        
+        function validateEmail () {
+            let email = document.getElementById("email").value.trim();
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.(com|in|org|edu.in)$/;
+            
+
+            if (email === "") { alert("Email cannot be empty !"); return false; }
+
+            if (!emailPattern.test(email)) {
+                alert("Invalid Email !! please enter a valid email.");
+                return false;
+            }
+
+            alert("Valide email address : " +email);
+            return true;
+
+        }
+
+        /*
+        .       - Any Character Except New Line
+        \d      - Digit (0-9)
+        \D      - Not a Digit (0-9)
+        \w      - Word Character (a-z, A-Z, 0-9, _)
+        \W      - Not a Word Character
+        \s      - Whitespace (space, tab, newline)
+        \S      - Not Whitespace (space, tab, newline)
+
+        \b      - Word Boundary
+        \B      - Not a Word Boundary
+        ^       - Beginning of a String
+        $       - End of a String
+
+        []      - Matches Characters in brackets
+        [^ ]    - Matches Characters NOT in brackets
+        |       - Either Or
+        ( )     - Group
+
+        Quantifiers:
+        *       - 0 or More
+        +       - 1 or More
+        ?       - 0 or One
+        {3}     - Exact Number
+        {3,4}   - Range of Numbers (Minimum, Maximum)
+        */
+
+    </script>
+</body>
+</html>
